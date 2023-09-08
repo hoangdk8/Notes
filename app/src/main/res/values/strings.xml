@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">BaseProject</string>
+    <string name="this_action_can_contain_ad">This action can contain ad</string>
+    <string name="facebook_app_id">1234</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_spain" translatable="false">Espalier</string>
+    <string name="language_portugal" translatable="false">Portuguese</string>
+    <string name="language_hindi" translatable="false">भारतीय भाषा</string>
+    <string name="language_germany" translatable="false">Deutsch</string>
+    <string name="language_brazil" translatable="false">Lingua Brasilia</string>
+    <string name="language_japan" translatable="false">日本</string>
+    <string name="language_korean" translatable="false">한국어</string>
+    <string name="language_france" translatable="false">Francais</string>
+    <string name="language_china" translatable="false">中国人</string>
+    <string name="languages">Languages</string>
+    <string name="ac">AC</string>
+    <string name="c">C</string>
+    <string name="chia">÷</string>
+    <string name="nhan">×</string>
+    <string name="cong">+</string>
+    <string name="tru">-</string>
+    <string name="bang">=</string>
+    <string name="khong">0</string>
+    <string name="mot">1</string>
+    <string name="hai">2</string>
+    <string name="ba">3</string>
+    <string name="bon">4</string>
+    <string name="nam">5</string>
+    <string name="sau">6</string>
+    <string name="bay">7</string>
+    <string name="tam">8</string>
+    <string name="chin">9</string>
+    <string name="thapphan">.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

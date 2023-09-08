@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#152232"
+    android:orientation="vertical"
+    android:id="@+id/fragment_container_home"
+    >
+
+    <TextView
+        android:id="@+id/text_view_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="end"
+        android:textAppearance="@style/textnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/view_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_input">
+        <TextView
+            android:id="@+id/text_view_amduong"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="6dp"
+            android:text=""
+            android:textAppearance="@style/textnumber"
+            app:layout_constraintEnd_toStartOf="@id/text_view_result"
+            app:layout_constraintTop_toBottomOf="@id/text_view_input" />
+        <TextView
+            android:id="@+id/text_view_result"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_marginTop="6dp"
+            android:text=""
+            android:gravity="end"
+            android:textAppearance="@style/textnumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_input" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/row_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_input">
+
+        <Button
+            android:id="@+id/button_AC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:gravity="center"
+            android:text="@string/ac"
+            android:textAppearance="@style/ac" />
+
+        <Button
+            android:id="@+id/button_amduong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:gravity="center"
+            android:text="+/-"
+            android:textAppearance="@style/ac"
+            />
+
+        <Button
+            android:id="@+id/button_chia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:gravity="center"
+            android:text="@string/chia"
+            android:textAppearance="@style/pheptinh" />
+
+        <Button
+            android:id="@+id/button_nhan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:clickable="true"
+            android:enabled="true"
+            android:gravity="center"
+            android:text="@string/nhan"
+            android:textAppearance="@style/pheptinh" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/row_1">
+
+        <Button
+            android:id="@+id/button_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:gravity="center"
+            android:text="@string/bay"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:gravity="center"
+            android:text="@string/tam"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:gravity="center"
+            android:text="@string/chin"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_tru"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:gravity="center"
+            android:text="@string/tru"
+            android:textAppearance="@style/pheptinh" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        app:layout_constraintTop_toBottomOf="@id/row_2">
+
+        <Button
+            android:id="@+id/button_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/bon"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/nam"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/sau"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_cong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:text="@string/cong"
+            android:textAppearance="@style/pheptinh" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/row_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        app:layout_constraintTop_toBottomOf="@id/row_3"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/mot"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/hai"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_so"
+            android:text="@string/ba"
+            android:textAppearance="@style/chuso" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/row_4"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/button_cham"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_phep_tinh"
+            android:text="@string/thapphan"
+            android:layout_weight="1"
+            android:textAppearance="@style/chuso" />
+
+        <Button
+            android:id="@+id/button_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_so"
+            android:text="@string/khong"
+            android:layout_weight="1"
+            android:textAppearance="@style/chuso" />
+
+        <ImageView
+            android:id="@+id/button_delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_phep_tinh"
+            android:src="@drawable/ic_delete"
+            android:gravity="center"
+            android:padding="24dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_bang"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_drawable"
+        android:text="@string/bang"
+        android:textAppearance="@style/pheptinh"
+        app:layout_constraintStart_toEndOf="@id/row_4"
+        app:layout_constraintTop_toBottomOf="@id/row_3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#4080FF" /> <!-- Màu nền của Drawable -->
+    <corners android:radius="100dp" /> <!-- Bán kính góc bo tròn -->
+</shape>
