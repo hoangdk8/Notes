@@ -13,10 +13,10 @@
     <string name="language_france" translatable="false">Francais</string>
     <string name="language_china" translatable="false">中国人</string>
     <string name="languages">Languages</string>
-    <string name="ac">AC</string>
+    <string name="ac">Ac</string>
     <string name="c">C</string>
-    <string name="chia">÷</string>
-    <string name="nhan">×</string>
+    <string name="chia">/</string>
+    <string name="nhan">*</string>
     <string name="cong">+</string>
     <string name="tru">-</string>
     <string name="bang">=</string>

@@ -13,5 +13,6 @@ data class Note(
     val title: String,
     @ColumnInfo(name ="content")
     val content: String,
-
+    @ColumnInfo(name = "date")
+    val date: Long
 )

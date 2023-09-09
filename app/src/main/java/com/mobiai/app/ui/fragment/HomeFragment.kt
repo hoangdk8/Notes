@@ -68,41 +68,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
         binding.buttonChia.setOnClickListener {
             binding.textViewInput.text =
-                binding.textViewAmduong.text.toString() + binding.textViewResult.text.toString() + "÷"
+                binding.textViewResult.text.toString() + "/"
             binding.textViewResult.text = ""
-            if (binding.textViewAmduong.text == "-") {
-                binding.textViewAmduong.text = ""
-            }
+
         }
         binding.buttonNhan.setOnClickListener {
             binding.textViewInput.text =
-                binding.textViewAmduong.text.toString() + binding.textViewResult.text.toString() + "×"
+                binding.textViewResult.text.toString() + "*"
             binding.textViewResult.text = ""
-            if (binding.textViewAmduong.text == "-") {
-                binding.textViewAmduong.text = ""
-            }
+
         }
         binding.buttonTru.setOnClickListener {
             binding.textViewInput.text =
-                binding.textViewAmduong.text.toString() + binding.textViewResult.text.toString() + "-"
+                 binding.textViewResult.text.toString() + "-"
             binding.textViewResult.text = ""
-            if (binding.textViewAmduong.text == "-") {
-                binding.textViewAmduong.text = ""
-            }
+
         }
         binding.buttonCong.setOnClickListener {
             binding.textViewInput.text =
-                binding.textViewAmduong.text.toString() + binding.textViewResult.text.toString() + "+"
+               binding.textViewResult.text.toString() + "+"
             binding.textViewResult.text = ""
-            if (binding.textViewAmduong.text == "-") {
-                binding.textViewAmduong.text = ""
-            }
+
         }
         binding.buttonBang.setOnClickListener {
-            if (binding.textViewAmduong.text == "-") {
-                binding.textViewAmduong.text = ""
-            }
-            else if (binding.textViewResult.text == "0000") {
+            if (binding.textViewResult.text == "0000") {
                 binding.buttonBang.visibility = View.INVISIBLE
                 val newFragment = NotesFragment()
                 val fragmentManager = requireActivity().supportFragmentManager
@@ -122,7 +111,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
             binding.textViewInput.text =
                         binding.textViewInput.text.toString() +
-                        binding.textViewAmduong.text.toString() +
                         binding.textViewResult.text.toString()
             val expressionString = binding.textViewInput.text.toString()
             try {
@@ -136,13 +124,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 binding.textViewResult.text = formattedResult
             } catch (e: Exception) {
                 binding.textViewResult.text = "Error"
-            }
-        }
-        binding.buttonAmduong.setOnClickListener {
-            if (binding.textViewAmduong.text == "") {
-                binding.textViewAmduong.text = "-"
-            } else {
-                binding.textViewAmduong.text = ""
             }
         }
     }

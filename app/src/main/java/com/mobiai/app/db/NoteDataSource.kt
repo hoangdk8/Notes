@@ -17,6 +17,15 @@ class NoteDataSource: CoroutineScope {
         result.value = listNote
         return result
     }
+
+    suspend fun getIdNote(): LiveData<List<Long>> {
+        val listNote = withContext(Dispatchers.IO) {
+            AppDataBase.getDatabaseClient().noteDao().getIdNote()
+        }
+        val result = MutableLiveData<List<Long>>()
+        result.value = listNote
+        return result
+    }
     fun addNote(note: Note) {
         launch(Dispatchers.IO) {
             AppDataBase.getDatabaseClient().noteDao().insert(note)

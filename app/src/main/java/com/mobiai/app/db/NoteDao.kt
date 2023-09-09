@@ -10,9 +10,12 @@ import com.mobiai.app.db.Note
 interface NoteDao {
     @Query("SELECT * FROM notes")
     fun getAllNotes(): List<Note>
-
     @Insert
     suspend fun insert(note: Note)
     @Update
     suspend fun update(note: Note)
+    @Query("SELECT id FROM notes")
+    fun getIdNote(): List<Long>
+
 }
+

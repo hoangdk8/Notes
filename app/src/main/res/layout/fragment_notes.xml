@@ -1,56 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container_notes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#112233"
-    tools:context=".app.ui.fragment.NotesFragment"
-    android:id="@+id/fragment_container_notes">
+    android:background="@drawable/backgroud_main"
+    tools:context=".app.ui.fragment.NotesFragment">
 
-    <LinearLayout
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="30dp"
+        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/arrow_left"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/arrow_left"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal">
+            android:layout_marginLeft="20dp"
+            android:text="Secret Notes"
+            android:textColor="@color/white"
+            android:textSize="27dp"
+            app:layout_constraintStart_toEndOf="@id/arrow_left"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-            <ImageButton
-                android:id="@+id/arrow_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/arrow_left" />
-
-            <TextView
-                android:id="@+id/text_view_title"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="@color/white"
-                android:layout_marginLeft="20dp"
-                android:text="Ghi chú bí mật" />
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="572dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/item_note"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:ignore="NotSibling"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_title"
+            tools:ignore="NotSibling" />
 
 
-        <ImageView
-            android:id="@+id/button_add"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_add_no_data"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="start"
-            android:background="@drawable/ic_add_round"
-            android:src="@drawable/ic_add" />
+            android:layout_marginBottom="250dp"
+            android:background="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/text_view_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/popins"
+            android:text="No data yet. Add now!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_add_no_data" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/button_add_data"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="54dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            android:background="@drawable/floatbutton_add"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

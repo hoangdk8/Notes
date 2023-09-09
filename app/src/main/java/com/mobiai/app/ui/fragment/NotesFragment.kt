@@ -3,8 +3,10 @@ package com.mobiai.app.ui.fragment
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.marginTop
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mobiai.R
@@ -25,7 +27,7 @@ class NotesFragment : BaseFragment<FragmentNotesBinding>() {
     }
 
     override fun initView() {
-        binding.buttonAdd.setOnClickListener {
+        binding.buttonAddNoData.setOnClickListener {
             val newFragment = AddFragment()
             val fragmentManager = requireActivity().supportFragmentManager
             val transaction = fragmentManager.beginTransaction()
@@ -35,6 +37,14 @@ class NotesFragment : BaseFragment<FragmentNotesBinding>() {
         }
         binding.arrowLeft.setOnClickListener {
             val newFragment = HomeFragment()
+            val fragmentManager = requireActivity().supportFragmentManager
+            val transaction = fragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container_notes, newFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+        binding.buttonAddData.setOnClickListener {
+            val newFragment = AddFragment()
             val fragmentManager = requireActivity().supportFragmentManager
             val transaction = fragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container_notes, newFragment)
@@ -74,10 +84,10 @@ class NotesFragment : BaseFragment<FragmentNotesBinding>() {
         transaction.addToBackStack(null)
         transaction.commit()
         Log.d("hoang", "showNoteDetail: $bundle")
-        Toast.makeText(requireContext(), "clickkk", Toast.LENGTH_SHORT).show()
     }
 
     private fun subscribeUI() {
+
         viewModel.listNote.observe(this) {
             adapter.setNotes(it) // Cập nhật dữ liệu cho adapter
             Log.d("hoang", "subscribeUI: note$it")
@@ -85,7 +95,14 @@ class NotesFragment : BaseFragment<FragmentNotesBinding>() {
                 binding.recyclerView.smoothScrollToPosition(it.size - 1)
             }
             binding.recyclerView.adapter = adapter
+            if (adapter.itemCount > 0) {
+                binding.textViewCheck.visibility = View.GONE
+                binding.buttonAddNoData.visibility = View.GONE
+                binding.buttonAddData.visibility = View.VISIBLE
 
+            } else {
+                binding.recyclerView.visibility = View.GONE
+            }
         }
     }
 

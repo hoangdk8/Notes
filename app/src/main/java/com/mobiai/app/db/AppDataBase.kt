@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.mobiai.app.App
 import com.mobiai.base.basecode.service.db.TestModelDatabase
 
-@Database(entities = [Note::class], version = 1)
+@Database(entities = [Note::class], version = 2)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun noteDao(): NoteDao
 

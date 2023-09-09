@@ -42,8 +42,10 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(private val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(note: Note) {
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val formattedDate = dateFormat.format(note.date)
             binding.textViewTitle.text = note.title
-
+            binding.textViewDate.text = "Date: $formattedDate"
             binding.root.setOnClickListener {
                 onItemClickListener?.invoke(note)
             }
